@@ -2,7 +2,9 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         if (s == null || t == null || s.length() != t.length())
-			return false;
+			{
+			    return false;
+			}
         Map<Character, Character> map = new HashMap<>();
         
         for (int i = 0; i < s.length(); i++) {
@@ -15,7 +17,9 @@ class Solution {
 			else 
 			{
                 if (map.containsValue(char_str2)) 
-					return false;
+					{
+					    return false;
+					}
              map.put(char_str1, char_str2);
             }
         }
