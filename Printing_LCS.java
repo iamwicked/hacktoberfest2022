@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.util.*;
 
@@ -18,7 +19,7 @@ class Main {
         String next() {
             while (st == null || !st.hasMoreElements()) {
                 try {
-                    st = new StringTokenizer(br.readLine());
+                    st = new StringTokenizer(BoundedLineReader.readLine(br, 5_000_000));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -55,7 +56,7 @@ class Main {
         String nextLine() {
             String str = "";
             try {
-                str = br.readLine();
+                str = BoundedLineReader.readLine(br, 5_000_000);
             } catch (IOException e) {
                 e.printStackTrace();
             }
